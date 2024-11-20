@@ -51,7 +51,7 @@
       <?php include 'sections/about.html'; ?>
       <?php include 'sections/skills.html'; ?>
       <?php include 'sections/resume.html'; ?>  
-      <?php include 'sections/projects.html'; ?>
+      <?php include 'sections/projects.php'; ?>
       <?php include 'sections/contact.html'; ?>
     </main>
     <!-- End #main -->

@@ -1,14 +1,13 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'portfolio';
+$servername = "localhost";
+$username = "root";
+$password = ""; // Remplace par le mot de passe si nécessaire
+$dbname = "portfolio";
 
-// Connexion
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérification de connexion
+// Vérifier la connexion
 if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
+    die("Connexion échouée : " . $conn->connect_error);
 }
 ?>
