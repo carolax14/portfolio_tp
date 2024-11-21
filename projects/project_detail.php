@@ -43,7 +43,7 @@ $project_images = getProjectImages($project_id);
         <div class="d-flex flex-column">
             <div class="profile">
                 <img src="../assets/img/IMG_20210606_122251_432.jpg" alt="" class="img-fluid rounded-circle" />
-                <h1 class="text-light"><a href="index.html">Carole Hafizou</a></h1>
+                <h1 class="text-light"><a href="index.php">Carole Hafizou</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a
                         href="https://www.facebook.com/carole.hafizou"
@@ -66,7 +66,7 @@ $project_images = getProjectImages($project_id);
 
                     <li><a href="../sections/projects.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projets</span></a></li>
                     <li><a href="../sections/resume.html" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a></li>
-                    <li><a href="../sections/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+                    <li><a href="../sections/contact.php" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
         </div>

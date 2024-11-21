@@ -49,7 +49,7 @@
     <?php include 'sections/skills.html'; ?>
     <?php include 'sections/resume.html'; ?>
     <?php include 'projects/projects.php'; ?>
-    <?php include 'sections/contact.html'; ?>
+    <?php include 'sections/contact.php'; ?>
   </main>
   <!-- End #main -->
 
