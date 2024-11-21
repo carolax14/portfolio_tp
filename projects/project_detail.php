@@ -62,6 +62,8 @@ $project_images = getProjectImages($project_id);
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
                     <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
+                    <li><a href="../sections/about.html" class="nav-link scrollto"><i class="bx bx-user"></i> <span>A Propos</span></a></li>
+
                     <li><a href="../sections/projects.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projets</span></a></li>
                     <li><a href="../sections/resume.html" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a></li>
                     <li><a href="../sections/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>

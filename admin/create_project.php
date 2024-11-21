@@ -25,8 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <div class="admin-dashboard">
-
-        <!-- Main Content -->
         <div class="main-content">
             <div class="form-container">
                 <div class="back-navigation">
@@ -36,52 +34,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php if (isset($error)) : ?>
                     <div class="error-message"><?php echo $error; ?></div>
                 <?php endif; ?>
-                <form method="POST" action="process_create_project.php" enctype="multipart/form-data">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="title">Titre du projet</label>
+                        <label for="title">Titre :</label>
                         <input type="text" id="title" name="title" placeholder="Entrez le titre du projet" required>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" placeholder="Entrez la description du projet" required></textarea>
+                        <label for="description">Description :</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Entrez la description du projet" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="category">Catégorie</label>
+                        <label for="category">Catégorie :</label>
                         <select id="category" name="category" required>
-                            <option value="Web Development">Application Web</option>
-                            <option value="Mobile App">Application Mobile</option>
+                            <option value="Application Web">Application Web</option>
+                            <option value="Application Mobile">Application Mobile</option>
                             <option value="Software">Logiciel</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="languages">Langages Utilisés</label>
+                        <label for="languages">Langages :</label>
                         <input type="text" id="languages" name="languages" placeholder="Ex: PHP, JavaScript, Python" required>
                     </div>
                     <div class="form-group">
-                        <label for="tools">Outils Utilisés</label>
+                        <label for="tools">Outils :</label>
                         <input type="text" id="tools" name="tools" placeholder="Ex: VS Code, Git, Docker" required>
                     </div>
                     <div class="form-group">
-                        <label for="date_realization">Date de Réalisation</label>
+                        <label for="date_realization">Date de Réalisation :</label>
                         <input type="date" id="date_realization" name="date_realization" required>
                     </div>
                     <div class="form-group">
-                        <label for="cover_image">Image de Couverture</label>
+                        <label for="cover_image">Image de Couverture :</label>
                         <input type="file" id="cover_image" name="cover_image" accept="image/*" required>
                     </div>
-                    <div class="form-group">
-                        <label for="image_path">Chemin de l'Image Supplémentaire</label>
-                        <input type="file" id="image_path" name="image_path[]" accept="image/*" multiple>
+                    <h3>Images associées :</h3>
+                    <div id="images-container" class="form-group">
+                        <div>
+                            <label for="image_path">Image :</label>
+                            <input type="file" id="image_path" name="image_path[]" accept="image/*">
+                            <br>
+                            <label for="image_description">Description :</label>
+                            <textarea id="image_description" name="image_description[]" rows="2"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="image_description">Description de l'Image</label>
-                        <textarea id="image_description" name="image_description" placeholder="Description de l'image supplémentaire"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Créer le projet</button>
+                    <button type="button" onclick="addImageField()" class="btn-add-image">Ajouter une autre image</button>
+                    <br><br>
+                    <button type="submit" class="btn-submit">Créer</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        // Ajouter un champ pour une image supplémentaire
+        function addImageField() {
+            const container = document.getElementById('images-container');
+            const newField = `
+                <div>
+                    <label for="image_path">Image :</label>
+                    <input type="file" id="image_path" name="image_path[]" accept="image/*">
+                    <br>
+                    <label for="image_description">Description :</label>
+                    <textarea id="image_description" name="image_description[]" rows="2"></textarea>
+                </div>`;
+            container.insertAdjacentHTML('beforeend', newField);
+        }
+    </script>
 </body>
 
 </html>
