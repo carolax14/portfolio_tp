@@ -140,3 +140,61 @@ function getProjectImages($project_id)
 
     return $images;
 }
+
+
+// Fonction pour récupérer un projet par ID
+function getProjectById($id)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM projects WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result->fetch_assoc();
+}
+
+// Fonction pour mettre à jour un projet
+function updateProject($id, $data, $files)
+{
+    global $conn;
+
+    $title = $data['title'];
+    $description = $data['description'];
+    $category = $data['category'];
+    $languages = $data['languages'];
+    $tools = $data['tools'];
+    $date_realization = $data['date_realization'];
+    $cover_image = null;
+
+    if (!empty($files['cover_image']['name'])) {
+        $cover_image = $files['cover_image']['name'];
+        $target = "../assets/img/projects/" . basename($cover_image);
+        move_uploaded_file($files['cover_image']['tmp_name'], $target);
+    }
+
+    $sql = "UPDATE projects SET 
+                title = ?, 
+                description = ?, 
+                category = ?, 
+                languages = ?, 
+                tools = ?, 
+                date_realization = ?";
+
+    if ($cover_image) {
+        $sql .= ", cover_image = ?";
+    }
+
+    $sql .= " WHERE id = ?";
+
+    $stmt = $conn->prepare($sql);
+    if ($cover_image) {
+        $stmt->bind_param("sssssssi", $title, $description, $category, $languages, $tools, $date_realization, $cover_image, $id);
+    } else {
+        $stmt->bind_param("ssssssi", $title, $description, $category, $languages, $tools, $date_realization, $id);
+    }
+
+    return $stmt->execute();
+}
