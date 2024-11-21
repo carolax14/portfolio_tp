@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Admin</title>
     <link rel="stylesheet" href="../assets/css/style_admin.css">
-
 </head>
 
 <body>
@@ -48,7 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <button type="submit" class="btn">Se connecter</button>
             </form>
-
+            <!-- Lien vers index.php -->
+            <div class="back-to-home">
+                <a href="../index.php">Retour à l'accueil</a>
+            </div>
         </div>
 
         <!-- Login Side -->

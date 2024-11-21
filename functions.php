@@ -104,16 +104,6 @@ function deleteProject($project_id)
     return $stmt_project->affected_rows > 0;
 }
 
-
-
-
-
-
-
-
-
-
-
 // Fonction pour récupérer les détails d'un projet
 function getProjectDetails($project_id)
 {

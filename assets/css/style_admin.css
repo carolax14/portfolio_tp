@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #6a0dad;
+    background: url("../img/fond4.jpg") no-repeat center center;
+    background-size: cover;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -8,122 +9,122 @@ body {
     height: 100vh;
 }
 
-.login-container {
-    display: flex;
-    width: 900px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
 
-.login-form {
-    background-color: #fff;
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .login-container {
+            display: flex;
+            width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.login-form h2 {
-    margin-bottom: 20px;
-    color: #6a0dad;
-}
+        .login-form {
+            background-color: #fff;
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.login-form .form-group {
-    margin-bottom: 15px;
-}
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #b31e6f;
+        }
 
-.login-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 14px;
-}
+        .login-form .form-group {
+            margin-bottom: 15px;
+        }
 
-.login-form .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .login-form .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+        }
 
-.login-form .form-group input:focus {
-    border-color: #6a0dad;
-    outline: none;
-}
+        .login-form .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.login-form .btn {
-    background-color: #6a0dad;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
+        .login-form .form-group input:focus {
+            border-color: #b31e6f;
+            outline: none;
+        }
 
-.login-form .btn:hover {
-    background-color: #5800b3;
-}
+        .login-form .btn {
+            background-color: #b31e6f;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
 
-.login-form .error {
-    color: red;
-    margin-bottom: 15px;
-}
+        .login-form .btn:hover {
+            background-color: #5800b3;
+        }
 
-.login-side {
-    flex: 1;
-    background: url('../assets/img/login-bg.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        .login-form .error {
+            color: red;
+            margin-bottom: 15px;
+        }
 
-.login-side h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
+        .login-side {
+            flex: 1;
+            background: url('../assets/img/login-bg.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-.login-side p {
-    font-size: 1rem;
-}
+        .login-side h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
 
-.forgot-password {
-    text-align: right;
-    margin-top: 5px;
-    font-size: 14px;
-}
+        .login-side p {
+            font-size: 1rem;
+        }
 
-.forgot-password a {
-    color: #6a0dad;
-    text-decoration: none;
-}
+        .forgot-password {
+            text-align: right;
+            margin-top: 5px;
+            font-size: 14px;
+        }
 
-.forgot-password a:hover {
-    text-decoration: underline;
-}
+        .forgot-password a {
+            color: #b31e6f;
+            text-decoration: none;
+        }
 
-.signup-link {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
-}
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
 
-.signup-link a {
-    color: #6a0dad;
-    text-decoration: none;
-}
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
 
-.signup-link a:hover {
-    text-decoration: underline;
-}
+        .signup-link a {
+            color: #b31e6f;
+            text-decoration: none;
+        }
 
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
