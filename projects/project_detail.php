@@ -98,7 +98,7 @@ $project_images = getProjectImages($project_id);
                             <div class="swiper-wrapper align-items-center">
                                 <?php foreach ($project_images as $image): ?>
                                     <div class="swiper-slide">
-                                        <img src="<?php echo htmlspecialchars($image['image_path']); ?>" alt="<?php echo htmlspecialchars($image['description']); ?>">
+                                        <img src="../assets/img/projects/<?php echo htmlspecialchars($image['image_path']); ?>" alt="<?php echo htmlspecialchars($image['description']); ?>">
                                     </div>
                                 <?php endforeach; ?>
                             </div>

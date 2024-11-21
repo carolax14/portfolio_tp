@@ -22,7 +22,6 @@ $result = $conn->query($sql);
         <div class="container">
             <div class="section-title">
                 <h2 class="text-uppercase">Projets</h2>
-                <p>Explorez mes projets réalisés.</p>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -43,9 +42,9 @@ $result = $conn->query($sql);
                         echo "<div class='col-lg-4 col-md-6 portfolio-item $filterClass'>";
                         echo "  <h5 style='text-align: center'>{$row['title']}</h5><br>";
                         echo "  <div class='portfolio-wrap'>";
-                        echo "      <img src='{$row['cover_image']}' class='img-fluid' alt='{$row['title']}' />";
+                        echo "      <img src='assets/img/projects/{$row['cover_image']}' class='img-fluid' alt='{$row['title']}' />";
                         echo "      <div class='portfolio-links'>";
-                        echo "          <a href='{$row['cover_image']}' data-gallery='portfolioGallery' class='portfolio-lightbox' title='{$row['title']}'><i class='bx bx-plus'></i></a>";
+                        echo "          <a href='assets/img/projects/{$row['cover_image']}' data-gallery='portfolioGallery' class='portfolio-lightbox' title='{$row['title']}'><i class='bx bx-plus'></i></a>";
                         echo "          <a href='projects/project_detail.php?id={$row['id']}' title='Plus de détails'><i class='bx bx-link'></i></a>";
                         echo "      </div>";
                         echo "  </div>";

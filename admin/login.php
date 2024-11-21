@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php'; // Inclure la connexion à la base de données
+include '../db.php'; // Inclure la connexion à la base de données
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
