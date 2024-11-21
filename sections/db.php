@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Remplace par le mot de passe si nécessaire
+$password = ""; 
 $dbname = "portfolio";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

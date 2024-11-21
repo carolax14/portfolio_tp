@@ -27,7 +27,7 @@ $result_images = $conn->query($sql_images);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -55,6 +55,9 @@ $result_images = $conn->query($sql_images);
                 <ul>
                     <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
                     <li><a href="../sections/projects.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projets</span></a></li>
+                    <li><a href="../sections/resume.html" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a></li>
+                    <li><a href="../sections/portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projet</span></a></li>
+                    <li><a href="../sections/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
         </div>
