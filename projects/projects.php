@@ -9,12 +9,14 @@ $result = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
     <section id="portfolio" class="portfolio section-bg">
         <div class="container">
@@ -44,7 +46,7 @@ $result = $conn->query($sql);
                         echo "      <img src='{$row['cover_image']}' class='img-fluid' alt='{$row['title']}' />";
                         echo "      <div class='portfolio-links'>";
                         echo "          <a href='{$row['cover_image']}' data-gallery='portfolioGallery' class='portfolio-lightbox' title='{$row['title']}'><i class='bx bx-plus'></i></a>";
-                        echo "          <a href='sections/project_detail.php?id={$row['id']}' title='Plus de détails'><i class='bx bx-link'></i></a>";
+                        echo "          <a href='projects/project_detail.php?id={$row['id']}' title='Plus de détails'><i class='bx bx-link'></i></a>";
                         echo "      </div>";
                         echo "  </div>";
                         echo "</div>";
@@ -57,4 +59,5 @@ $result = $conn->query($sql);
         </div>
     </section>
 </body>
+
 </html>

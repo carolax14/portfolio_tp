@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; 
+$password = "";
 $dbname = "portfolio";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -10,4 +10,3 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connexion échouée : " . $conn->connect_error);
 }
-?>

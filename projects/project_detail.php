@@ -1,6 +1,6 @@
 <?php
-// Inclure la connexion à la base de données
-include 'db.php';
+// Inclure le fichier des fonctions
+include '../functions.php';
 
 // Récupérer l'ID du projet depuis l'URL
 $project_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
@@ -10,24 +10,18 @@ if ($project_id === 0) {
     die("Projet introuvable ou ID non spécifié.");
 }
 
-// Requête pour récupérer les informations du projet
-$sql = "SELECT * FROM projects WHERE id = $project_id";
-$result = $conn->query($sql);
-
-// Vérifier si le projet existe
-if ($result->num_rows > 0) {
-    $project = $result->fetch_assoc();
-} else {
+// Utiliser les fonctions pour récupérer les données
+$project = getProjectDetails($project_id);
+if (!$project) {
     die("Projet introuvable.");
 }
 
-// Requête pour récupérer les images associées au projet
-$sql_images = "SELECT * FROM project_images WHERE project_id = $project_id";
-$result_images = $conn->query($sql_images);
+$project_images = getProjectImages($project_id);
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -50,13 +44,26 @@ $result_images = $conn->query($sql_images);
             <div class="profile">
                 <img src="../assets/img/IMG_20210606_122251_432.jpg" alt="" class="img-fluid rounded-circle" />
                 <h1 class="text-light"><a href="index.html">Carole Hafizou</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a
+                        href="https://www.facebook.com/carole.hafizou"
+                        class="facebook"
+                        target="_blank"><i class="bx bxl-facebook"></i></a>
+                    <a
+                        href="https://www.instagram.com/carolehafizou/?hl=fr"
+                        class="instagram"
+                        target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a
+                        href="https://re.linkedin.com/in/carole-hafizou-788401213"
+                        class="linkedin"
+                        target="_blank"><i class="bx bxl-linkedin"></i></a>
+                </div>
             </div>
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
                     <li><a href="../index.php" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
                     <li><a href="../sections/projects.php" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projets</span></a></li>
                     <li><a href="../sections/resume.html" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a></li>
-                    <li><a href="../sections/portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projet</span></a></li>
                     <li><a href="../sections/contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
@@ -84,21 +91,19 @@ $result_images = $conn->query($sql_images);
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-8">
-                        <center><h3><?php echo $project['title']; ?></h3></center>
+                        <center>
+                            <h3><?php echo $project['title']; ?></h3>
+                        </center>
                         <div class="portfolio-details-slider swiper-container">
-                        <div class="swiper-wrapper align-items-center">
-                          <?php
-                          // Boucle pour afficher chaque image associée au projet
-                          while ($image = $result_images->fetch_assoc()) {
-                              echo "<div class='swiper-slide'>";
-                              echo "<img src='" . $image['image_path'] . "' alt='" . $image['description'] . "' />";
-                              echo "<center><div class='text mt-4'>" . $image['description'] . "</div></center>";
-                              echo "</div>";
-                          }
-                          ?>
-                        </div>
+                            <div class="swiper-wrapper align-items-center">
+                                <?php foreach ($project_images as $image): ?>
+                                    <div class="swiper-slide">
+                                        <img src="<?php echo htmlspecialchars($image['image_path']); ?>" alt="<?php echo htmlspecialchars($image['description']); ?>">
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
 
-                            
+
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
@@ -124,17 +129,9 @@ $result_images = $conn->query($sql_images);
         <!-- End Portfolio Details Section -->
     </main>
 
-    <footer id="footer">
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Carole Hafizou</span></strong>
-            </div>
-            <div class="credits">
-                <a href="mentions.html">Mentions Légales</a>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+    <!-- ======= Footer ======= -->
+    <?php include '../includes/footer.html'; ?>
+    <!-- End  Footer -->
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/aos/aos.js"></script>
@@ -149,5 +146,6 @@ $result_images = $conn->query($sql_images);
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>
